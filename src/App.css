@@ -1,38 +1,128 @@
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .App {
   text-align: center;
+
+}
+
+body {
+  background-color: darkcyan;
+  height: 100vh;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-intro {
+  font-size: large;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.activeMessageList {
+  border-radius: 0 15px 15px 0;
+  float: right;
+  margin-right: 5%;
+  width: 60%;
+  height: 91vh;
+  overflow: auto;
+  background-color: #a8d0e6;
+  text-align: left;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.messageListText {
+  background-color: tomato;
+  position: absolute;
+  top: 0;
+}
+
+#messageBar {
+  padding: 10px;
+}
+
+#messageField {
+  width: 80%;
+}
+
+.buttons {
+  margin-left: 5px;
+}
+
+.activeRoom {
+  border-radius: 15px 0 0 0;
+  height: 5%;
+  background-color: blueviolet;
+}
+
+.roomList {
+  float: left;
+  width: 30%;
+  height: 91vh;
+  margin-left: 5%;
+  background-color: chartreuse;
+  border-radius: 15px 0 0 15px;
+  position: relative;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+#roomContainer {
+  overflow: auto;
+  height: 80%;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+#roomsClickable {
+  display: list-item;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#roomsClickable:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#createRoom {
+  background-color: yellow;
+  position: absolute;
+  bottom: 0;
+  height: 15%;
+  width: 100%;
+  border-radius: 0 0 0 15px;
+}
+
+#create-room-p {
+  margin: 0;
+}
+
+.userName {
+  padding: 5px;
 }
