@@ -1,6 +1,5 @@
-import React, {
-    Component
-  } from 'react';
+import React, { Component } from 'react';
+import ScrollableFeed from 'react-scrollable-feed';
   
   class MessageList extends Component {
     constructor(props) {
@@ -81,12 +80,13 @@ import React, {
   
       return (
         <section className="activeMessageList">
-          <div className="messageListText"> {messageList}
-          </div>
+         
+         <ScrollableFeed forceScroll="true" className="messageListText"> {messageList}
+          </ScrollableFeed>
           <form id="messageBar" onSubmit={this.createMessage}>
-            <input id="messageField" type="text" value={this.state.content} onChange={this.handleChange}>
+            <input id="messageField" autoComplete="off" type="text" value={this.state.content} onChange={this.handleChange}>
             </input>
-            <input class="buttons" type="submit" value="Send">
+            <input className="buttons" type="submit" value="Send">
             </input>
           </form>
         </section>

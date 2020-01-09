@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css'
-//import Button from 'react-bootstrap/Button';
+
 
 class RoomList extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class RoomList extends Component {
     e.preventDefault();
     const newRoomName = this.state.newRoomName;
     this.roomsRef.push({
-      name: newRoomName/* createDate: Date.now() , from exercise with mentor, leaving in code for reference */
+      name: newRoomName
     });
     this.setState({ newRoomName: ""})
   }
@@ -54,7 +54,7 @@ class RoomList extends Component {
   render() {
     return (
       <section className="roomList">
-        <div className="activeRoom">Active Room: {this.props.activeRoom.name === (null || undefined) ? "No room currently selected" : this.props.activeRoom.name}</div>
+        <div className="activeRoom">Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}</div>
         <div id="roomContainer">
         <div>Available rooms:</div>
         {
@@ -64,12 +64,14 @@ class RoomList extends Component {
           )
         }
          </div>
-        <form id="createRoom" onSubmit={ (e) => this.createRoom(e)}>
-        <button onClick={() => this.deleteRoom(this.props.activeRoom.key, this.props.activeRoom.name)}>Delete active room</button>
+         <div id="createRoom">
+         <button className="buttons" onClick={() => this.deleteRoom(this.props.activeRoom.key, this.props.activeRoom.name)}>Delete active room</button>
+        <form id="createRoomForm" onSubmit={ (e) => this.createRoom(e)}>
           <p id="create-room-p">Create new room:</p>
           <input type="text" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) } />
-          <input type="submit" value="Create"></input>
+          <input className="buttons" type="submit" value="Create"></input>
         </form>
+        </div>
       </section>
     );
   }

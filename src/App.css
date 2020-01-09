@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: darkcyan;
+  background-color: #2B4162;
   height: 100vh;
 }
 
@@ -31,6 +31,10 @@ body {
   font-size: large;
 }
 
+#greeting {
+  color: #A8E0FF
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -48,7 +52,7 @@ body {
   width: 60%;
   height: 91vh;
   overflow: auto;
-  background-color: #a8d0e6;
+  background-color: #A8E0FF;
   text-align: left;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
   position: relative;
@@ -57,27 +61,36 @@ body {
 }
 
 .messageListText {
-  background-color: tomato;
   position: absolute;
+  display: inline-block;
   top: 0;
+  overflow: scroll;
+  height: 50vh;
+  padding: 1em;
+  width: 95%;
 }
 
 #messageBar {
+  position: absolute;
+  bottom: 0;
   padding: 10px;
 }
 
 #messageField {
-  width: 80%;
+  width: 65%;
 }
 
 .buttons {
+  border-radius: 5px;
   margin-left: 5px;
+  background-color: #EB5E55;
 }
 
 .activeRoom {
   border-radius: 15px 0 0 0;
-  height: 5%;
-  background-color: blueviolet;
+  height: 30px;
+  background-color: #b98b82;
+  padding: 9px 0 0 0;
 }
 
 .roomList {
@@ -85,7 +98,7 @@ body {
   width: 30%;
   height: 91vh;
   margin-left: 5%;
-  background-color: chartreuse;
+  background-color: #fcde9c;
   border-radius: 15px 0 0 15px;
   position: relative;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -93,7 +106,7 @@ body {
 
 #roomContainer {
   overflow: auto;
-  height: 80%;
+  height: 75%;
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -111,7 +124,7 @@ body {
 }
 
 #createRoom {
-  background-color: yellow;
+  background-color: #b98b82;
   position: absolute;
   bottom: 0;
   height: 15%;

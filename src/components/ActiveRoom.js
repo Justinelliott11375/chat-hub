@@ -14,7 +14,7 @@ class ActiveRoom extends Component {
   render() {
     return (
       <section class="activeRoom">
-        <div>Active Room: {this.props.activeRoom.name}</div>
+        <div id="activeRoomTitle">Active Room: {this.props.activeRoom.name}</div>
       </section>
     );
   }

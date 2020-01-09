@@ -14,8 +14,8 @@ import * as firebase from 'firebase';
     projectId: "chat-hub-65a65",
     storageBucket: "chat-hub-65a65.appspot.com",
     messagingSenderId: "946230590935",
-    appId: "1:946230590935:web:fc02554ec137ff63ed5f92",
-    measurementId: "G-J4W4NLV7W3"
+    appId: "1:946230590935:web:77bcdcb95a523abfed5f92",
+    measurementId: "G-TY8K7E1T7N"
   };
   firebase.initializeApp(firebaseConfig);
 

@@ -33,23 +33,23 @@ class User extends Component {
   if(this.props.activeUser === null) {
       return (
         <section className="userName">
-          <div>Hello! Sign in with Google or continue as Guest</div>
-          {<button type="text" onClick={() => this.handleSignIn()}>sign in with Google</button>}
-          {<button type="text" onClick={() => this.signInAnonymous()}>continue as Guest</button>}
+          <div id="greeting" >Hello! Sign in with Google or continue as Guest</div>
+          {<button className="buttons" type="text" onClick={() => this.handleSignIn()}>sign in with Google</button>}
+          {<button className="buttons" type="text" onClick={() => this.signInAnonymous()}>continue as Guest</button>}
         </section>
       );
     } else if(this.props.activeUser === "Guest") {
     return (
       <section className="userName">
-        <div>Hello, Guest!</div>
-        {<button type="text" onClick={() => this.handleSignOut()}>sign out</button>}
+        <div id="greeting">Hello, Guest!</div>
+        {<button type="text" className="buttons" onClick={() => this.handleSignOut()}>sign out</button>}
       </section>
     );
     } else {
       return (
         <section className="userName">
-          <div>hello, {userDisplayName}!</div>
-          {<button type="text" onClick={() => this.handleSignOut()}>sign out</button>}
+          <div id="greeting">hello, {userDisplayName}!</div>
+          {<button type="text" className="buttons" onClick={() => this.handleSignOut()}>sign out</button>}
         </section>
       );
     }
