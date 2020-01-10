@@ -80,9 +80,10 @@ import ScrollableFeed from 'react-scrollable-feed';
   
       return (
         <section className="activeMessageList">
-         
-         <ScrollableFeed forceScroll="true" className="messageListText"> {messageList}
+         <div className="messageListText">
+         <ScrollableFeed forceScroll="true"> {messageList}
           </ScrollableFeed>
+          </div>
           <form id="messageBar" onSubmit={this.createMessage}>
             <input id="messageField" autoComplete="off" type="text" value={this.state.content} onChange={this.handleChange}>
             </input>

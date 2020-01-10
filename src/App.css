@@ -64,8 +64,7 @@ body {
   position: absolute;
   display: inline-block;
   top: 0;
-  overflow: scroll;
-  height: 50vh;
+  height: 95%;
   padding: 1em;
   width: 95%;
 }
@@ -73,11 +72,12 @@ body {
 #messageBar {
   position: absolute;
   bottom: 0;
+  width: 65%;
   padding: 10px;
 }
 
 #messageField {
-  width: 65%;
+  padding-right: 70%;
 }
 
 .buttons {
@@ -112,7 +112,6 @@ body {
 }
 
 #roomsClickable {
-  display: list-item;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -130,6 +129,12 @@ body {
   height: 15%;
   width: 100%;
   border-radius: 0 0 0 15px;
+}
+
+#createRoom>* {
+  margin: auto;
+  margin-top: 4%;
+
 }
 
 #create-room-p {
