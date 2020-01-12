@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: #2B4162;
+  background-color: #555560;
   height: 100vh;
 }
 
@@ -32,7 +32,8 @@ body {
 }
 
 #greeting {
-  color: #A8E0FF
+  color: #A8E0FF;
+  font-size: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -52,7 +53,7 @@ body {
   width: 60%;
   height: 91vh;
   overflow: auto;
-  background-color: #A8E0FF;
+  background-color: #e1f2fe;
   text-align: left;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
   position: relative;
@@ -83,13 +84,14 @@ body {
 .buttons {
   border-radius: 5px;
   margin-left: 5px;
-  background-color: #EB5E55;
+  background-color: #f45809;
 }
 
 .activeRoom {
   border-radius: 15px 0 0 0;
   height: 30px;
-  background-color: #b98b82;
+  color: #e1f2fe;
+  background-color: #213f5e;
   padding: 9px 0 0 0;
 }
 
@@ -98,7 +100,7 @@ body {
   width: 30%;
   height: 91vh;
   margin-left: 5%;
-  background-color: #fcde9c;
+  background-color: #577491;
   border-radius: 15px 0 0 15px;
   position: relative;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -123,7 +125,8 @@ body {
 }
 
 #createRoom {
-  background-color: #b98b82;
+  background-color: #213f5e;
+  color: #e1f2fe;
   position: absolute;
   bottom: 0;
   height: 15%;
