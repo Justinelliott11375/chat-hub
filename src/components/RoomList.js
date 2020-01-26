@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css'
+import { Dropdown } from 'react-bootstrap';
 
 
 class RoomList extends Component {
@@ -52,28 +53,66 @@ class RoomList extends Component {
 
 
   render() {
-    return (
-      <section className="roomList">
-        <div className="activeRoom">Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}</div>
-        <div id="roomContainer">
-        <div>Available rooms:</div>
+    let width = window.innerWidth;
+    if(width <= 480) {
+      return (
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}
+          </Dropdown.Toggle>
+        <Dropdown.Menu id="dropdown-basic-button" title="Change Room">
         {
-          this.state.rooms.map((room, index) =>
-        <div id="roomsClickable" onClick={() => this.roomChange(room)} key={index}>{room.name}
-        </div>
-          )
-        }
-         </div>
-         <div id="createRoom">
-         <button className="buttons" onClick={() => this.deleteRoom(this.props.activeRoom.key, this.props.activeRoom.name)}>Delete active room</button>
-        <form id="createRoomForm" onSubmit={ (e) => this.createRoom(e)}>
-          <p id="create-room-p">Create new room:</p>
-          <input type="text" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) } />
-          <input className="buttons" type="submit" value="Create"></input>
-        </form>
-        </div>
-      </section>
-    );
+            this.state.rooms.map((room, index) =>
+            <Dropdown.Item>
+            <div id="roomsClickable" onClick={() => this.roomChange(room)} key={index}>{room.name}
+           </div>
+           </Dropdown.Item>
+            )
+          }
+      </Dropdown.Menu>
+      </Dropdown>
+        /* <nav role="navigation">
+          <ul>
+            <li><div id="activeRoomMobile">Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}</div>
+              <ul class="dropdown">
+              {
+            this.state.rooms.map((room, index) =>
+            <li>
+            <div id="roomsClickable" onClick={() => this.roomChange(room)} key={index}>{room.name}
+           </div>
+           </li>
+            )
+          }
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        */
+      )
+    } else {
+      return (
+        <section className="roomList">
+          <div className="activeRoom">Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}</div>
+          <div id="roomContainer">
+          <div>Available rooms:</div>
+          {
+            this.state.rooms.map((room, index) =>
+          <div id="roomsClickable" onClick={() => this.roomChange(room)} key={index}>{room.name}
+          </div>
+            )
+          }
+          </div>
+          <div id="createRoom">
+          <button className="buttons" onClick={() => this.deleteRoom(this.props.activeRoom.key, this.props.activeRoom.name)}>Delete active room</button>
+          <form id="createRoomForm" onSubmit={ (e) => this.createRoom(e)}>
+            <p id="create-room-p">Create new room:</p>
+            <input type="text" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) } />
+            <input className="buttons" type="submit" value="Create"></input>
+          </form>
+          </div>
+        </section>
+      );
+    }
   }
 };
 

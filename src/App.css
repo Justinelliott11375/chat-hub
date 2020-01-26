@@ -7,11 +7,10 @@ html {
 
 .App {
   text-align: center;
-
 }
 
 body {
-  background-color: #555560;
+  background-color: #555560 !important;
   height: 100vh;
 }
 
@@ -146,4 +145,40 @@ body {
 
 .userName {
   padding: 5px;
+}
+
+#dropdown-basic {
+  background-color: #f45809;
+  border-color: #f45809;
+}
+
+@media only screen and (max-width: 480px) {
+  .roomList {
+    width: 90%;
+    height: 45vh;
+    margin-left: 5%;
+    border-radius: 15px 15px 15px 15px;
+    position: relative;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  }
+
+  .activeRoom {
+    border-radius: 15px 15px 0px 0px;
+    height: 30px;
+    padding: 9px 0 0 0;
+  }
+
+  #activeRoomMobile {
+    opacity: 1;
+  }
+
+  .activeMessageList {
+    border-radius: 0px 0px 15px 15px;
+    width: 90%;
+    height: 80vh;
+    overflow: auto;
+    text-align: left;
+    flex-direction: column-reverse;
+    z-index: 9;
+  }
 }
