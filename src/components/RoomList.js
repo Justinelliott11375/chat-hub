@@ -22,7 +22,7 @@ class RoomList extends Component {
   }
 
   deleteRoom(deleteKey, deleteName) {
-    if(deleteKey == undefined) {
+    if(deleteKey === undefined) {
       alert("No room currently selected");
     } else {
     const deletingRoom = this.roomsRef.child(deleteKey);
@@ -59,7 +59,7 @@ class RoomList extends Component {
     let width = window.innerWidth;
     if(width <= 480) {
       return (
-        <div>
+        <div id="headerMenuMobile">
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
           Current: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}

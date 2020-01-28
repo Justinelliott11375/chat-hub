@@ -147,6 +147,17 @@ body {
   padding: 5px;
 }
 
+#headerMenuMobile {
+  background-color: white;
+  margin: -40px 5% 0 5%;
+  padding-top: 10%;
+  border-radius: 15px 15px 0 0;
+}
+
+.dropdown {
+  display: inline;
+}
+
 #dropdown-basic {
   background-color: #f45809;
   border-color: #f45809;
