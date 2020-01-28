@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
 import * as firebase from 'firebase';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
   // Initialize Firebase

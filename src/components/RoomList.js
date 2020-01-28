@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css'
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown, Button} from 'react-bootstrap';
 
 
 class RoomList extends Component {
@@ -22,6 +22,9 @@ class RoomList extends Component {
   }
 
   deleteRoom(deleteKey, deleteName) {
+    if(deleteKey == undefined) {
+      alert("No room currently selected");
+    } else {
     const deletingRoom = this.roomsRef.child(deleteKey);
     deletingRoom.remove(function(error) {
       alert(error ? "failed" : deleteName
@@ -31,7 +34,7 @@ class RoomList extends Component {
     console.log("delete fired")
     const otherRooms= this.state.rooms.filter(room => room.key !== deleteKey);
       this.setState({ rooms: otherRooms});
-
+    }
   }
 
   handleChange(e) {
@@ -56,9 +59,10 @@ class RoomList extends Component {
     let width = window.innerWidth;
     if(width <= 480) {
       return (
+        <div>
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}
+          Current: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}
           </Dropdown.Toggle>
         <Dropdown.Menu id="dropdown-basic-button" title="Change Room">
         {
@@ -71,6 +75,14 @@ class RoomList extends Component {
           }
       </Dropdown.Menu>
       </Dropdown>
+      <Button className="buttons" variant="primary" onClick={() => this.deleteRoom(this.props.activeRoom.key, this.props.activeRoom.name)}>Delete active room</Button>
+      <div id="createRoomMobile">
+          <form id="createRoomForm" onSubmit={ (e) => this.createRoom(e)}>
+            <input type="text" placeholder="Create room" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) } />
+            <input className="buttons" type="submit" value="Create"></input>
+          </form>
+          </div>
+      </div>
         /* <nav role="navigation">
           <ul>
             <li><div id="activeRoomMobile">Active Room: {this.props.activeRoom.name === (null || undefined) ? "None" : this.props.activeRoom.name}</div>

@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #555560 !important;
+  background-color: #555560;
   height: 100vh;
 }
 
@@ -150,6 +150,16 @@ body {
 #dropdown-basic {
   background-color: #f45809;
   border-color: #f45809;
+}
+
+#dropdown-basic-button {
+  background-color: #f45809;
+  overflow: scroll;
+  height: 50vh;
+}
+
+.dropdown-item {
+  background-color: #f45809;
 }
 
 @media only screen and (max-width: 480px) {
